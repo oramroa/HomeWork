@@ -8,9 +8,8 @@ import java.util.*;
 public class Top10WordsMain {
     public static void main(String[] args) {
         LinkedHashMap<String, Integer> wordCount = new LinkedHashMap<>();
-        String filePath = "Война и мир_книга.txt";
-        try {
-            BufferedReader in = new BufferedReader(new FileReader(filePath));
+        try (FileReader filePath = new FileReader("Война и мир_книга.txt");
+             BufferedReader in = new BufferedReader(filePath)) {
             String str;
 
             while ((str = in.readLine()) != null) {
@@ -35,7 +34,7 @@ public class Top10WordsMain {
                 }
             }
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
 
         ArrayList<Integer> values = new ArrayList<>();
