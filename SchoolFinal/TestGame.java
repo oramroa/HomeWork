@@ -20,16 +20,16 @@ public class TestGame {
 
         int a = 0;
         do {
-            try {
-                a = scanner.nextInt();
-                if (a < 1 | a > 3) {
-                    System.out.println("Повторите попытку");
-                }
+
+            a = scanner.nextInt();
+            if (a < 1 | a > 3) {
+                System.out.println("Повторите попытку");
+            } else {
                 int num = number.get(a);
                 teacher.generateTeachers(num);
-            } catch (NullPointerException ignored) {
             }
-        } while (!(a > 0 & a < 4));
+        }
+        while (!(a > 0 & a < 4));
 
 
         // альтернативное решение с помощью оператора if else
