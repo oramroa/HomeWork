@@ -32,10 +32,9 @@ public class Teacher extends Human {
 
     GenerateLists records = new GenerateLists();
 
-
     public void generateTeachers(int number) {
-        String male = null;
-        String female = null;
+        String male;
+        String female;
         String subject;
         double markValue;
 
@@ -46,7 +45,7 @@ public class Teacher extends Human {
          */
         for (int i = 1; i < number; i++) {
             markValue = new Teacher().getCertificateEvaluation();
-            subject = records.getSubject();
+            subject = new Subject().getSubName();
             male = records.getFullMaleName();
             female = records.getFullFemaleName();
             Category category = new Teacher().getCategory();
